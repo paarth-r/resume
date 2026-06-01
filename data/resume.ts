@@ -146,18 +146,22 @@ export const resume: Resume = {
   ],
 
   skills: [
-    { group: "Languages", items: ["Python", "C++", "TypeScript", "JavaScript", "SQL"] },
+    { group: "Languages", items: ["Python", "C++", "Java", "TypeScript", "JavaScript", "SQL"] },
     {
       group: "ML / Vision",
-      items: ["PyTorch", "TensorFlow", "mmcv", "OpenCV", "MediaPipe", "YOLO", "RTMPose", "ViTPose"],
+      items: ["PyTorch", "TensorFlow", "Keras", "mmcv", "OpenCV", "Pillow", "MediaPipe", "YOLO", "RTMPose", "ViTPose"],
     },
     {
       group: "Edge / Inference",
       items: ["TensorRT", "CUDA", "ONNX", "NVIDIA Jetson Orin Nano"],
     },
     {
+      group: "Scientific Computing",
+      items: ["NumPy", "Pandas", "SciPy"],
+    },
+    {
       group: "Build & App",
-      items: ["React Native (Expo)", "Firebase", "Git", "NumPy", "Pandas", "CAD"],
+      items: ["React Native (Expo)", "Firebase", "Git", "CAD"],
     },
   ],
 
