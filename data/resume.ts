@@ -120,6 +120,18 @@ export const resume: Resume = {
         { label: "Team 254 open-source (AOS)", href: "https://github.com/Team254/aos-public" },
       ],
     },
+    {
+      org: "Solo Tech",
+      role: "Robotics & ML Intern",
+      period: "2025",
+      location: "Remote",
+      summary:
+        "Meta-backed robotics startup. Led development of DexGrasp, a dynamic zero-shot grasping system on an open-source 6-DOF arm.",
+      points: [
+        "Led development of DexGrasp — dynamic zero-shot grasping on an open-source 6-DOF robotic arm, grasping novel objects with no object-specific training.",
+        "Presented DexGrasp at an internal company conference.",
+      ],
+    },
   ],
 
   projects: [
