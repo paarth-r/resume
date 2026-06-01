@@ -4,29 +4,28 @@ import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 
 const ITEMS = [
-  { id: "about", label: "About" },
-  { id: "work", label: "Experience" },
-  { id: "projects", label: "Projects" },
-  { id: "stack", label: "Stack" },
-  { id: "education", label: "Education" },
-  { id: "lab", label: "Lab" },
-  { id: "contact", label: "Contact" },
+  { id: "about", index: "00", label: "About" },
+  { id: "work", index: "01", label: "Experience" },
+  { id: "projects", index: "02", label: "Projects" },
+  { id: "stack", index: "03", label: "Stack" },
+  { id: "education", index: "04", label: "Education" },
+  { id: "lab", index: "05", label: "Lab" },
+  { id: "contact", index: "06", label: "Contact" },
 ];
 
 export function Nav() {
   const [active, setActive] = useState("about");
 
   useEffect(() => {
-    const visible = new Map<string, number>();
+    const visible = new Set<string>();
     const observer = new IntersectionObserver(
       (entries) => {
         for (const e of entries) {
-          if (e.isIntersecting) visible.set(e.target.id, e.intersectionRatio);
+          if (e.isIntersecting) visible.add(e.target.id);
           else visible.delete(e.target.id);
         }
-        // Pick the section in view, in document order, nearest the top band.
-        const inOrder = ITEMS.map((i) => i.id).filter((id) => visible.has(id));
-        if (inOrder.length) setActive(inOrder[0]);
+        const first = ITEMS.map((i) => i.id).find((id) => visible.has(id));
+        if (first) setActive(first);
       },
       { rootMargin: "-40% 0px -55% 0px", threshold: [0, 0.5, 1] }
     );
@@ -54,16 +53,23 @@ export function Nav() {
               <a
                 key={it.id}
                 href={`#${it.id}`}
-                className={`relative py-1 transition-colors ${
+                className={`group relative flex items-center gap-1.5 py-1 transition-colors ${
                   isActive ? "text-accent" : "text-faint hover:text-ink"
                 }`}
               >
-                {it.label}
+                <span
+                  className={`text-[9px] transition-colors ${
+                    isActive ? "text-accent" : "text-line group-hover:text-faint"
+                  }`}
+                >
+                  {it.index}
+                </span>
+                <span>{it.label}</span>
                 {isActive && (
                   <motion.span
-                    layoutId="nav-active"
-                    className="absolute -bottom-0.5 left-0 right-0 h-px bg-accent"
-                    transition={{ type: "spring", stiffness: 400, damping: 32 }}
+                    layoutId="nav-dot"
+                    className="absolute -bottom-1 left-0 right-0 mx-auto h-1 w-1 rounded-full bg-accent"
+                    transition={{ type: "spring", stiffness: 420, damping: 34 }}
                   />
                 )}
               </a>

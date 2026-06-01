@@ -5,6 +5,7 @@ import { MagneticButton } from "./components/MagneticButton";
 import { DownloadButton } from "./components/DownloadButton";
 import { ScrollProgress } from "./components/ScrollProgress";
 import { Nav } from "./components/Nav";
+import { BackToTop } from "./components/BackToTop";
 
 function SectionHeading({ index, title }: { index: string; title: string }) {
   return (
@@ -47,6 +48,7 @@ export default function Home() {
     <>
       <ScrollProgress />
       <Nav />
+      <BackToTop />
 
       <div id="top" className="mx-auto max-w-5xl px-6 sm:px-10">
         {/* ── Hero ─────────────────────────────────────────────── */}
