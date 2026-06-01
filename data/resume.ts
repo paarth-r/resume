@@ -51,12 +51,6 @@ export type Resume = {
   experience: Experience[];
   projects: Project[];
   skills: SkillGroup[];
-  education: {
-    school: string;
-    location: string;
-    detail: string;
-    involvement: string[];
-  };
   awards: string[];
 };
 
@@ -68,7 +62,7 @@ export const resume: Resume = {
       "I build computer-vision and robotics systems that run in real time on edge hardware.",
     location: "San Jose, CA",
     about:
-      "Sophomore at Bellarmine College Prep and a computer-vision engineer focused on real-time perception. I lead vision & AI for FRC Team 254, founded Hyperform, and spend most of my time getting models to run fast and reliably on small hardware — from stereo 3D pose to on-field robot localization.",
+      "A computer-vision engineer focused on real-time perception. I lead vision & AI for FRC Team 254, founded Hyperform, and spend most of my time getting models to run fast and reliably on small hardware — from stereo 3D pose to on-field robot localization.",
   },
 
   links: {
@@ -183,13 +177,6 @@ export const resume: Resume = {
       items: ["React Native (Expo)", "Firebase", "Git", "CAD"],
     },
   ],
-
-  education: {
-    school: "Bellarmine College Preparatory",
-    location: "San Jose, CA",
-    detail: "Class of 2028",
-    involvement: ["Vision & AI Lead, FRC Team 254", "Precalculus Teaching Assistant"],
-  },
 
   awards: [
     "Excellence in Engineering Award — FRC Silicon Valley Event (2026, with Team 254)",

@@ -41,8 +41,7 @@ function Section({
 }
 
 export default function Home() {
-  const { profile, links, metrics, experience, projects, skills, education, awards } =
-    resume;
+  const { profile, links, metrics, experience, projects, skills, awards } = resume;
 
   return (
     <>
@@ -217,21 +216,10 @@ export default function Home() {
           </div>
         </Section>
 
-        {/* ── Education + Honors ───────────────────────────────── */}
-        <Section id="education" index="04" title="Education & Honors">
+        {/* ── Honors ───────────────────────────────────────────── */}
+        <Section id="honors" index="04" title="Honors">
           <Reveal>
-            <div className="flex flex-wrap items-baseline justify-between gap-x-4">
-              <h3 className="font-display text-2xl tracking-[-0.01em] text-ink">
-                {education.school}
-              </h3>
-              <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-faint">
-                {education.detail} · {education.location}
-              </span>
-            </div>
-            <p className="mt-2 text-ink-soft">{education.involvement.join("  ·  ")}</p>
-          </Reveal>
-          <Reveal delay={0.08}>
-            <ul className="mt-8 space-y-2.5">
+            <ul className="space-y-2.5">
               {awards.map((a, i) => (
                 <li key={i} className="flex max-w-2xl gap-3 text-[15px] leading-relaxed text-ink-soft">
                   <span aria-hidden className="mt-[2px] text-accent">

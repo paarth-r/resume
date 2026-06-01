@@ -64,8 +64,7 @@ const s = StyleSheet.create({
 const strip = (u: string) => u.replace(/^https?:\/\//, "").replace(/\/$/, "");
 
 export function ResumeDoc() {
-  const { profile, links, experience, projects, skills, education, awards } =
-    resume;
+  const { profile, links, experience, projects, skills, awards } = resume;
 
   return (
     <Document
@@ -147,18 +146,6 @@ export function ResumeDoc() {
               <Text style={s.skillItems}>{g.items.join(", ")}</Text>
             </View>
           ))}
-        </View>
-
-        {/* Education */}
-        <View style={s.block}>
-          <Text style={s.sectionTitle}>Education</Text>
-          <View style={s.itemHeader}>
-            <Text style={s.org}>{education.school}</Text>
-            <Text style={s.meta}>
-              {education.detail}  ·  {education.location}
-            </Text>
-          </View>
-          <Text style={s.itemSummary}>{education.involvement.join("  ·  ")}</Text>
         </View>
 
         {/* Awards */}
