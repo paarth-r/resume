@@ -124,7 +124,7 @@ export const resume: Resume = {
       org: "Solo Tech",
       role: "Robotics & ML Intern",
       period: "2025",
-      location: "Remote",
+      location: "Mountain View, CA",
       summary:
         "Meta-backed robotics startup. Led development of DexGrasp, a dynamic zero-shot grasping system on an open-source 6-DOF arm.",
       points: [
@@ -154,6 +154,13 @@ export const resume: Resume = {
         "A gesture-controlled desktop interface — hand tracking driving real-time interactions, built with MediaPipe and OpenCV.",
       tags: ["Python", "MediaPipe", "OpenCV", "Pose"],
       href: "https://github.com/paarth-r/jarvis",
+    },
+    {
+      name: "Personal Blog",
+      blurb:
+        "Writing on computer vision, robotics, and building things — a fast MDX site I designed and ship myself.",
+      tags: ["Next.js", "MDX", "Tailwind", "Vercel"],
+      href: "https://paarth-r.vercel.app",
     },
   ],
 
