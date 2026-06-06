@@ -145,8 +145,8 @@ export const resume: Resume = {
     {
       name: "Jarvis",
       blurb:
-        "A gesture-controlled desktop interface — hand tracking driving real-time interactions, built with MediaPipe and OpenCV.",
-      tags: ["Python", "MediaPipe", "OpenCV", "Pose"],
+        "Event-driven runtime that turns a stereo camera pair into a 3D hand interface — MediaPipe tracking triangulated to metric 3D, driving cursor, pinch-click, and pointing, with a live 2D + 3D visualizer.",
+      tags: ["Python", "Stereo Vision", "MediaPipe", "asyncio", "Triangulation"],
       href: "https://github.com/paarth-r/jarvis",
     },
     {
