@@ -150,6 +150,13 @@ export const resume: Resume = {
       href: "https://github.com/paarth-r/jarvis",
     },
     {
+      name: "dum-e",
+      blurb:
+        "Smooth IK teleoperation controller for the LeRobot SO-101 arm. Eliminated jitter by tracking a commanded reference instead of noisy servo feedback (damped-least-squares IK + jerk limit). PyBullet sim rig with a synthetic depth camera for hardware-free testing; scaffolding a diffusion-policy imitation-learning pipeline on top.",
+      tags: ["Python", "Pinocchio / placo", "PyBullet", "IK", "Robotics"],
+      href: "https://github.com/paarth-r/Dum-E",
+    },
+    {
       name: "Personal Blog",
       blurb:
         "Writing on computer vision, robotics, and building things — a fast MDX site I designed and ship myself.",
