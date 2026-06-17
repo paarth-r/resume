@@ -16,49 +16,55 @@ const ACCENT = "#a8431d";
 
 const s = StyleSheet.create({
   page: {
-    paddingTop: 38,
-    paddingBottom: 34,
-    paddingHorizontal: 44,
+    paddingTop: 24,
+    paddingBottom: 20,
+    paddingHorizontal: 42,
     fontFamily: "Helvetica",
-    fontSize: 9.2,
+    fontSize: 8.8,
     color: INK,
-    lineHeight: 1.42,
+    lineHeight: 1.26,
   },
-  name: { fontFamily: "Helvetica-Bold", fontSize: 22, letterSpacing: -0.4 },
-  role: { fontSize: 9.5, color: ACCENT, marginTop: 3, letterSpacing: 0.3 },
-  contact: { fontSize: 8.4, color: GREY, marginTop: 6 },
+  name: {
+    fontFamily: "Helvetica-Bold",
+    fontSize: 20,
+    letterSpacing: -0.4,
+    lineHeight: 1.1,
+    marginBottom: 4,
+  },
+  role: { fontSize: 9.1, color: ACCENT, marginTop: 0, letterSpacing: 0.3 },
+  contact: { fontSize: 8.2, color: GREY, marginTop: 4 },
   contactLink: { color: GREY, textDecoration: "none" },
-  rule: { borderBottomWidth: 1, borderBottomColor: LINE, marginVertical: 12 },
-  summary: { fontSize: 9.2, color: GREY, marginBottom: 4 },
+  rule: { borderBottomWidth: 1, borderBottomColor: LINE, marginVertical: 7 },
+  summary: { fontSize: 9, color: GREY, marginBottom: 3 },
   sectionTitle: {
     fontFamily: "Helvetica-Bold",
-    fontSize: 8.5,
+    fontSize: 8.4,
     letterSpacing: 1.4,
     color: FAINT,
     textTransform: "uppercase",
-    marginBottom: 7,
+    marginBottom: 4,
   },
-  block: { marginBottom: 13 },
+  block: { marginBottom: 7 },
   itemHeader: {
     flexDirection: "row",
     justifyContent: "space-between",
     marginBottom: 1,
   },
-  org: { fontFamily: "Helvetica-Bold", fontSize: 10 },
-  meta: { fontSize: 8.4, color: FAINT },
-  roleLine: { fontSize: 9, color: ACCENT, marginBottom: 3 },
-  itemSummary: { fontSize: 8.8, color: GREY, marginBottom: 3 },
-  bulletRow: { flexDirection: "row", marginBottom: 2, paddingRight: 6 },
+  org: { fontFamily: "Helvetica-Bold", fontSize: 9.8 },
+  meta: { fontSize: 8.3, color: FAINT },
+  roleLine: { fontSize: 8.9, color: ACCENT, marginBottom: 2 },
+  itemSummary: { fontSize: 8.7, color: GREY, marginBottom: 2 },
+  bulletRow: { flexDirection: "row", marginBottom: 1.5, paddingRight: 6 },
   bulletDot: { color: ACCENT, marginRight: 6 },
-  bulletText: { flex: 1, fontSize: 8.8 },
-  entry: { marginBottom: 8 },
-  projName: { fontFamily: "Helvetica-Bold", fontSize: 9.4 },
-  projBlurb: { fontSize: 8.8, color: GREY, marginTop: 1 },
-  tags: { fontSize: 7.8, color: FAINT, marginTop: 2 },
-  skillRow: { flexDirection: "row", marginBottom: 3 },
-  skillGroup: { width: 92, fontFamily: "Helvetica-Bold", fontSize: 8.6 },
-  skillItems: { flex: 1, fontSize: 8.8, color: GREY },
-  awardRow: { flexDirection: "row", marginBottom: 2 },
+  bulletText: { flex: 1, fontSize: 8.7 },
+  entry: { marginBottom: 5 },
+  projEntry: { marginBottom: 3 },
+  projName: { fontFamily: "Helvetica-Bold", fontSize: 8.9, color: INK },
+  projBlurb: { fontSize: 8.7, color: GREY },
+  skillRow: { flexDirection: "row", marginBottom: 2 },
+  skillGroup: { width: 92, fontFamily: "Helvetica-Bold", fontSize: 8.5 },
+  skillItems: { flex: 1, fontSize: 8.7, color: GREY },
+  awardRow: { flexDirection: "row", marginBottom: 1.5 },
 });
 
 const strip = (u: string) => u.replace(/^https?:\/\//, "").replace(/\/$/, "");
@@ -114,7 +120,6 @@ export function ResumeDoc() {
                 </Text>
               </View>
               <Text style={s.roleLine}>{e.role}</Text>
-              <Text style={s.itemSummary}>{e.summary}</Text>
               {e.points.map((p, i) => (
                 <View key={i} style={s.bulletRow}>
                   <Text style={s.bulletDot}>—</Text>
@@ -129,10 +134,12 @@ export function ResumeDoc() {
         <View style={s.block}>
           <Text style={s.sectionTitle}>Selected Projects</Text>
           {projects.map((p) => (
-            <View key={p.name} style={s.entry} wrap={false}>
-              <Text style={s.projName}>{p.name}</Text>
-              <Text style={s.projBlurb}>{p.blurb}</Text>
-              <Text style={s.tags}>{p.tags.join("  ·  ")}</Text>
+            <View key={p.name} style={s.projEntry} wrap={false}>
+              <Text style={s.projBlurb}>
+                <Text style={s.projName}>{p.name}</Text>
+                {"  —  "}
+                {p.blurb}
+              </Text>
             </View>
           ))}
         </View>
@@ -149,7 +156,7 @@ export function ResumeDoc() {
         </View>
 
         {/* Awards */}
-        <View style={s.block}>
+        <View style={s.block} wrap={false}>
           <Text style={s.sectionTitle}>Honors</Text>
           {awards.map((a, i) => (
             <View key={i} style={s.awardRow}>

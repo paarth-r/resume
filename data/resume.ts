@@ -91,11 +91,10 @@ export const resume: Resume = {
       period: "2025 — Present",
       location: "San Jose, CA",
       summary:
-        "Real-time stereo computer vision that reconstructs 3D human pose for athletic form analysis and automated coaching.",
+        "Real-time multi-camera computer vision that reconstructs 3D human pose for athletic form analysis and automated coaching.",
       points: [
-        "Built a synchronized stereo capture + 3D pose pipeline running up to 120 fps with ≤5 ms inter-frame sync, with interchangeable RTMPose, ViTPose, and BlazePose backends.",
-        "Stabilized noisy keypoints with per-joint One-Euro filtering to produce a clean 17-keypoint 3D skeleton in metric space.",
-        "Designed custom CAD camera rigs and a React Native (Expo) mobile app on Firebase — sole engineer across vision, hardware, and app.",
+        "Built a synchronized multi-camera 3D pose pipeline — three ChArUco-calibrated cameras (~0.3 px RMS) at up to 120 fps with N-view triangulation and interchangeable RTMPose / ViTPose / BlazePose backends.",
+        "Built a ~3,000-line form-correction engine (291 tests) — body metrics, a phase state machine, and five rule types streaming live cues over WebSocket, with exercises defined as markdown specs (no code to add one). Sole engineer across vision, hardware, custom CAD rigs, and a React Native (Expo) app on Firebase.",
       ],
     },
     {
@@ -107,11 +106,22 @@ export const resume: Resume = {
         "Lead vision & AI for one of the most decorated teams in FIRST Robotics, building edge perception for a championship-level robot.",
       points: [
         "Architected a custom AOS-based perception system on an NVIDIA Jetson Orin Nano: 4 synchronized cameras at 120 fps, ~1 ms latency, delivering centimetre-precise on-field localization.",
-        "Robot “Overload” finished the 2026 season 65–6–0 (91% win rate) and ranked #2 in the world by Statbotics EPA (~3,700 teams).",
-        "Team honors during my tenure: Excellence in Engineering, multiple District Event wins, District Championship Winner, and the Quality Award.",
+        "Robot “Overload” finished the 2026 season 65–6–0 (91% win rate) and ranked #2 in the world by Statbotics EPA (~3,700 teams); team honors during my tenure include Excellence in Engineering and District Championship Winner.",
       ],
       links: [
         { label: "Team 254 open-source (AOS)", href: "https://github.com/Team254/aos-public" },
+      ],
+    },
+    {
+      org: "Mashgin",
+      role: "Computer Vision Research Intern",
+      period: "Summer 2026",
+      location: "Palo Alto, CA",
+      summary:
+        "AI-checkout unicorn (~$1.5B). Independent research building a real-time queue-analytics vision system from store security-camera footage — “How Busy Is the Line?”",
+      points: [
+        "Built storePose, a real-time multi-person tracking pipeline — YOLOX detection → RTMPose 17-keypoint pose → SORT tracking with Kalman boxes and One-Euro smoothing — on real store footage via CoreML, with appearance-based re-identification for stable IDs through occlusion.",
+        "Decomposed each person's time into waiting vs. serving with per-camera queue zones, and shipped a live web dashboard comparing checkout speeds across registers.",
       ],
     },
     {
@@ -163,6 +173,13 @@ export const resume: Resume = {
       tags: ["Next.js", "MDX", "Tailwind", "Vercel"],
       href: "https://paarth-r.vercel.app",
     },
+    {
+      name: "…and many more",
+      blurb:
+        "Campus (a browser climbing game), Odin, Impostor, and a long tail of other experiments across vision, robotics, tools, and games — all on GitHub.",
+      tags: ["Open source"],
+      href: "https://github.com/paarth-r",
+    },
   ],
 
   skills: [
@@ -190,6 +207,5 @@ export const resume: Resume = {
     "District Event Winner — Silicon Valley & Central Valley Events (2026, with Team 254)",
     "District Championship Winner & Quality Award — FIRST California (2026, with Team 254)",
     "Madtown Throwdown Champion — off-season (2025, with Team 254)",
-    "#2 in the world — Statbotics EPA, 2026 season (~3,700 teams)",
   ],
 };
